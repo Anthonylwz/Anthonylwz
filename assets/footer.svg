@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="157" viewBox="0 0 1280 157" role="img" aria-labelledby="title desc"><title id="title">Ver portafolio de Anthony y explorar sus proyectos</title><desc id="desc">Diseño original para el perfil público de Anthony Alex. Las animaciones respetan la preferencia de movimiento reducido.</desc><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#080e1c"/><stop offset="1" stop-color="#211735"/></linearGradient><linearGradient id="accent"><stop stop-color="#42e8e0"/><stop offset=".55" stop-color="#a995ff"/><stop offset="1" stop-color="#f3a6ca"/></linearGradient><pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#ffffff" stroke-opacity=".04"/></pattern></defs><style>
+text{font-family:Arial,Helvetica,sans-serif}.mono{font-family:Consolas,monospace}
+.dash{stroke-dasharray:5 12;animation:route 18s linear infinite}
+.float{animation:float 6s ease-in-out infinite}.float2{animation:float 7s ease-in-out infinite;animation-delay:-3s}
+.blink{animation:blink 1.2s steps(2,end) infinite}.pulse{animation:pulse 4s ease-in-out infinite}
+.spin{transform-origin:1020px 248px;animation:spin 45s linear infinite}
+.scan{animation:scan 7s ease-in-out infinite}.crawl{animation:route 12s linear infinite}
+@keyframes route{to{stroke-dashoffset:-340}}@keyframes float{50%{transform:translateY(-9px)}}
+@keyframes blink{50%{opacity:0}}@keyframes pulse{50%{opacity:.35}}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes scan{50%{transform:translateY(108px)}}
+@media(prefers-reduced-motion:reduce){.dash,.float,.float2,.blink,.pulse,.spin,.scan,.crawl{animation:none}}
+</style><rect x="1" y="1" width="1278" height="155" rx="18" fill="url(#bg)" stroke="#26354c" /><text x="36" y="55" font-size="32" fill="#edf4ff" font-weight="700" >Construyamos la siguiente idea.</text><text x="36" y="93" font-size="17" fill="#8fa3bf" font-weight="400" >Desarrollo web · sistemas · interfaces creativas</text><text x="36" y="127" font-size="11" fill="#42e8e0" font-weight="700" letter-spacing="2">ANTHONYLWZ  /  IDEAS → CÓDIGO → EXPERIENCIAS</text><path d="M1114 49L1143 78L1114 107M1059 78H1143" fill="none" stroke="#42e8e0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="pulse"/></svg>

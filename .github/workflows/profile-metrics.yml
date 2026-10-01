@@ -1,0 +1,39 @@
+name: Actualizar métricas del perfil
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 9 * * *'
+  push:
+    branches: [main]
+    paths:
+      - scripts/refresh_metrics.py
+      - .github/workflows/profile-metrics.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-metrics
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Obtener el repositorio del perfil
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - name: Calcular datos públicos y generar la tarjeta
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/refresh_metrics.py
+      - name: Guardar cambios en la tarjeta
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/metrics-v2.svg
+          if ! git diff --cached --quiet; then
+            git commit -m 'Actualizar métricas públicas del perfil'
+            git push
+          fi

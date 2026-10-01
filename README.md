@@ -1,58 +1,142 @@
 <p align="center">
-  <img src="./assets/banner.svg" width="100%" alt="Anthony Alex — desarrollo web, software e interfaces creativas" />
+  <img src="./assets/hero-v2.svg" width="100%" alt="Anthony Alex Flores Piuca — portada animada con terminal, circuitos y órbitas" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/Anthonylwz/cv-anthony">👨‍💻 Portafolio</a>
-  &nbsp; · &nbsp; <a href="#proyectos-destacados">🚀 Explorar proyectos</a>
+  <a href="https://github.com/Anthonylwz/cv-anthony"><img src="./assets/portfolio-button.svg" width="32%" alt="Portafolio — presentación profesional" /></a>
+  <a href="#proyectos-destacados"><img src="./assets/projects-button.svg" width="32%" alt="Proyectos — explora el código" /></a>
+  <a href="https://github.com/Anthonylwz/cv-anthony/blob/main/cv-anthony.pdf"><img src="./assets/cv-button.svg" width="32%" alt="Currículum — experiencia y formación" /></a>
 </p>
 
-### Hola, soy Anthony 👋
+## Hola, soy Anthony 👋
 
-Creo interfaces web que combinan funcionalidad, diseño y movimiento. Mis proyectos exploran tiendas digitales, sitios para negocios y experiencias interactivas.
+Estudio **Ingeniería de Software con IA en SENATI**. Me interesa crear soluciones que conecten una interfaz cuidada, lógica útil y datos bien organizados. Mi recorrido combina desarrollo web, proyectos para negocios y experiencia en soporte e infraestructura de cómputo.
 
-- 💻 Desarrollo web con **HTML, CSS y JavaScript**.
-- 🛒 Catálogos, buscadores y carritos de compra para comercios.
-- ✨ Animaciones e interfaces con personalidad.
-- 🧩 También exploro backend, bases de datos y automatización.
-
-### Proyectos destacados
-
-| Proyecto | Qué encontrarás |
-| :--- | :--- |
-| 🖥️ **[Matrixx Electronics](https://github.com/Anthonylwz/Matrixx-Electronics)** | Catálogo de tecnología con categorías, búsqueda, carrito y promociones. |
-| 🐾 **[Veterinaria Pariona](https://github.com/Anthonylwz/veterinaria)** | Sitio de servicios veterinarios, tienda y asistente conversacional integrado. |
-| 🍗 **[La Chacra](https://github.com/Anthonylwz/polleria)** | Experiencia gastronómica con platos animados en 3D, menú y buscador. |
-| 🌎 **[PeruMeetsWorld](https://github.com/Anthonylwz/PeruMeetsWorld)** | Proyecto web con integración de carga de contenido mediante Cloudinary. |
-| 👨‍💻 **[Portafolio personal](https://github.com/Anthonylwz/cv-anthony)** | Presentación profesional, experiencia, tecnologías y proyectos. |
-
-### Tecnologías & herramientas
+Me gusta experimentar con **animaciones, catálogos digitales, buscadores y carritos de compra**. También trabajo y aprendo con Python, PHP, bases de datos relacionales y servicios cloud. Este perfil reúne proyectos que muestran distintas partes de ese camino.
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js,python,php,mysql,firebase,git&theme=dark" alt="HTML, CSS, JavaScript, Python, PHP, MySQL, Firebase y Git" />
+  <img src="./assets/architecture.svg" width="100%" alt="Diagrama animado: interfaz, lógica y datos — mis áreas de interés" />
 </p>
 
-### GitHub en números
+## Tecnologías & herramientas
 
 <p align="center">
-  <img src="./assets/stats.svg" width="100%" alt="Repositorios públicos y distribución de lenguajes principales. Datos del 30 de septiembre de 2026." />
+  <img src="./assets/toolkit.svg" width="100%" alt="Herramientas agrupadas en interfaces, lógica y datos" />
 </p>
 
 <details>
-<summary>Ver tecnologías en detalle</summary>
+<summary><b>Ver cómo aplico estas tecnologías</b></summary>
 
+| Área | Tecnologías | Aplicación |
+| :--- | :--- | :--- |
+| **Interfaz web** | HTML5 · CSS3 · JavaScript | Estructura, estilos, navegación, interacción y animaciones. |
+| **Backend y scripts** | Python · PHP | Lógica de aplicaciones, APIs y automatización; áreas descritas en mi portafolio. |
+| **Datos** | SQL Server · MySQL | Modelado relacional, consultas y organización de información. |
+| **Cloud** | Firebase | Integración de servicios, autenticación y datos en tiempo real. |
+| **Flujo de trabajo** | Git · GitHub | Control de versiones y publicación de proyectos. |
+| **Soporte técnico** | Hardware · Redes · Sistemas operativos | Diagnóstico, mantenimiento e infraestructura de cómputo. |
 
-<p>
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css&logoColor=white" alt="CSS3" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=222222" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white" alt="PHP" />
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL" />
-  <img src="https://img.shields.io/badge/Firebase-DD2C00?style=flat-square&logo=firebase&logoColor=white" alt="Firebase" />
-  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git" />
-</p>
+Estas herramientas describen mi recorrido y mis áreas de trabajo y aprendizaje. Los repositorios públicos permiten explorar las implementaciones de cada proyecto.
 
 </details>
 
-<p align="center"><sub>Ideas → código → experiencias que se mueven.</sub></p>
+## Proyectos destacados
+
+Seis proyectos, seis enfoques: comercio, servicios, animación, gestión, contenido e identidad profesional. **Haz clic en una tarjeta para explorar su repositorio.**
+
+<table>
+  <tr>
+    <td width="50%"><a href="https://github.com/Anthonylwz/Matrixx-Electronics"><img src="./assets/project-matrixx.svg" width="100%" alt="Matrixx Electronics — catálogo tecnológico con búsqueda, categorías y carrito" /></a></td>
+    <td width="50%"><a href="https://github.com/Anthonylwz/veterinaria"><img src="./assets/project-veterinaria.svg" width="100%" alt="Veterinaria Pariona — servicios, tienda y asistente conversacional" /></a></td>
+  </tr>
+  <tr>
+    <td width="50%"><a href="https://github.com/Anthonylwz/polleria"><img src="./assets/project-polleria.svg" width="100%" alt="La Chacra — platos animados en 3D, menú y buscador" /></a></td>
+    <td width="50%"><a href="https://github.com/Anthonylwz/exportacion"><img src="./assets/project-exportacion.svg" width="100%" alt="Exportaciones Peruanas — interfaz de gestión y acceso por roles" /></a></td>
+  </tr>
+  <tr>
+    <td width="50%"><a href="https://github.com/Anthonylwz/PeruMeetsWorld"><img src="./assets/project-perumeetsworld.svg" width="100%" alt="PeruMeetsWorld — experiencia web e integración de Cloudinary" /></a></td>
+    <td width="50%"><a href="https://github.com/Anthonylwz/cv-anthony"><img src="./assets/project-portfolio.svg" width="100%" alt="Portafolio de Anthony — formación, experiencia y proyectos" /></a></td>
+  </tr>
+</table>
+
+<details>
+<summary><b>Explorar funciones y decisiones de cada proyecto</b></summary>
+
+### 🖥️ Matrixx Electronics
+
+Catálogo de productos tecnológicos con categorías, búsqueda, promociones y carrito. El proyecto reúne navegación comercial y componentes interactivos para explorar productos, revisar detalles y seleccionar cantidades.
+
+**Explora:** organización del catálogo, controles del carrito, filtros y experiencia de compra.
+
+### 🐾 Veterinaria Pariona
+
+Sitio orientado a servicios veterinarios y venta de productos para mascotas. Integra páginas de servicios, contacto, carrito y un asistente conversacional con Voiceflow.
+
+**Explora:** navegación entre servicios y tienda, presentación de productos e integración del asistente.
+
+### 🍗 La Chacra
+
+Una experiencia gastronómica que usa imágenes de platos en una escena con profundidad y animación. Incluye menú, búsqueda con sugerencias, páginas de detalle y acceso a contacto.
+
+**Explora:** uso de transformaciones 3D, animación con JavaScript y búsqueda de platos.
+
+### 📦 Exportaciones Peruanas
+
+Interfaz de un sistema de gestión de exportaciones, con pantalla de acceso y navegación vinculada a roles. Es un proyecto para explorar presentación de información y flujos de gestión.
+
+**Explora:** estructura de la interfaz, navegación y organización de pantallas.
+
+### 🌎 PeruMeetsWorld
+
+Proyecto web que incorpora el widget de carga de Cloudinary para integrar contenido. Amplía mis experimentos con interacción y servicios externos.
+
+**Explora:** integración del widget de carga y comportamiento de la página.
+
+### 👨‍💻 Portafolio personal
+
+Presentación de mi perfil profesional, experiencia, formación y tecnologías, con acceso al currículum y una selección de proyectos.
+
+**Explora:** jerarquía de contenido, presentación de experiencia y navegación entre secciones.
+
+</details>
+
+## Mi recorrido
+
+<p align="center">
+  <img src="./assets/journey.svg" width="100%" alt="Formación en SENATI y experiencia en Matrixx Electronics, PC SYSTEM y SIA CETPRO" />
+</p>
+
+<details>
+<summary><b>Formación y experiencia en detalle</b></summary>
+
+| Periodo | Organización | Enfoque |
+| :--- | :--- | :--- |
+| **2024–2026** | **SENATI** | Formación en Ingeniería de Software con IA. Desarrollo de software, soluciones full stack e IoT. |
+| **Marzo–julio 2025** | **Matrixx Electronics** | Técnico en Computación. Hardware y soporte técnico. |
+| **Agosto–diciembre 2025** | **PC SYSTEM** | Técnico de Computadoras. Diagnóstico, mantenimiento y optimización. |
+| **Desde febrero 2025** | **SIA CETPRO** | Auxiliar de Sistemas. Soporte e infraestructura de cómputo. |
+
+Más contexto en mi [portafolio profesional](https://github.com/Anthonylwz/cv-anthony) y [currículum](https://github.com/Anthonylwz/cv-anthony/blob/main/cv-anthony.pdf).
+
+</details>
+
+## Mi actividad en GitHub
+
+<p align="center">
+  <img src="./assets/metrics-v2.svg" width="100%" alt="Métricas actualizadas de proyectos públicos, sitios con Pages, lenguajes principales y forks" />
+</p>
+
+<p align="center"><sub>Las métricas se actualizan diariamente con datos públicos. La distribución cuenta el lenguaje principal por repositorio y excluye este repositorio de presentación.</sub></p>
+
+## Lo que quiero seguir construyendo
+
+- **Interfaces con personalidad:** movimiento que acompañe la navegación y el contenido.
+- **Soluciones para negocios:** catálogos, formularios y flujos de gestión más claros.
+- **Aplicaciones conectadas:** frontend, backend y bases de datos trabajando juntos.
+- **Automatización útil:** scripts y herramientas que simplifiquen tareas repetitivas.
+
+<p align="center">
+  <a href="https://github.com/Anthonylwz/cv-anthony"><img src="./assets/footer.svg" width="100%" alt="Construyamos la siguiente idea — ver portafolio de Anthony" /></a>
+</p>
+
+<p align="center"><sub>Diseño propio · Gráficos vectoriales animados · Código y proyectos públicos</sub></p>
