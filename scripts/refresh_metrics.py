@@ -14,7 +14,6 @@ from urllib.error import HTTPError, URLError
 
 ROOT = Path(__file__).resolve().parents[1]
 OWNER = 'Anthonylwz'
-COLORS = {'HTML': '#fb8b9a', 'JavaScript': '#f5d574', 'CSS': '#b4a2ff', 'Jupyter Notebook': '#42e8e0', 'Python': '#75b4e8', 'PHP': '#f3a6ca'}
 
 
 def fetch_public_repositories():
@@ -52,34 +51,30 @@ def render(repositories):
     projects = [r for r in repositories if r['name'].lower() != OWNER.lower() and not r.get('fork', False)]
     languages = Counter(r['language'] for r in projects if r.get('language'))
     lang_total = sum(languages.values())
-    metrics = [('PROYECTOS PÚBLICOS', len(projects), 'Repositorios propios'), ('SITIOS CON GITHUB PAGES', sum(bool(r.get('has_pages')) for r in projects), 'Pages habilitado'), ('LENGUAJES PRINCIPALES', len(languages), 'Detectados por GitHub'), ('FORKS RECIBIDOS', sum(r.get('forks_count', 0) for r in projects), 'En proyectos públicos')]
     updated = datetime.now(timezone(timedelta(hours=-5))).strftime('%d/%m/%Y')
-    s = '''<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="380" viewBox="0 0 1280 380" role="img" aria-labelledby="title desc"><title id="title">GitHub: proyectos públicos y lenguajes principales</title><desc id="desc">Métricas calculadas sobre repositorios públicos propios. El gráfico cuenta el lenguaje principal de cada repositorio; no mide nivel de dominio ni porcentaje de líneas de código.</desc><style>text{font-family:Arial,Helvetica,sans-serif}.light{animation:pulse 4s ease-in-out infinite}@keyframes pulse{50%{opacity:.4}}@media(prefers-reduced-motion:reduce){.light{animation:none}}</style><rect x="1" y="1" width="1278" height="378" rx="18" fill="#080d19" stroke="#26354c"/>'''
-    for i, (label, value, subtitle) in enumerate(metrics):
-        x = 28 + i * 313
-        color = ['#42e8e0', '#a995ff', '#f3a6ca', '#f5d574'][i]
-        s += f'<rect x="{x}" y="24" width="286" height="132" rx="13" fill="#101829" stroke="#26354c"/>'
-        s += t(x+17, 51, label, 11, color, '700', 'letter-spacing="1.2"')
-        s += t(x+17, 106, value, 45, '#edf4ff', '700')
-        s += t(x+17, 134, subtitle, 12, '#8fa3bf')
-    s += t(28, 197, 'LENGUAJE PRINCIPAL POR PROYECTO', 12, '#a995ff', '700', 'letter-spacing="2"')
-    s += t(28, 224, f'{lang_total} repositorios con lenguaje identificado', 14, '#8fa3bf')
-    x = 28
+    s = '''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="255" viewBox="0 0 1200 255" role="img" aria-labelledby="title desc"><title id="title">GitHub: repositorios públicos y lenguajes principales</title><desc id="desc">Datos de repositorios públicos propios, excluido el repositorio de presentación. El gráfico cuenta el lenguaje principal de cada repositorio.</desc><style>text{font-family:Arial,Helvetica,sans-serif}</style><rect x="1" y="1" width="560" height="253" rx="12" fill="#0d1117" stroke="#30363d"/><rect x="578" y="1" width="621" height="253" rx="12" fill="#0d1117" stroke="#30363d"/>'''
+    s += t(26, 39, 'GitHub / datos públicos', 21, '#c9d1d9', '600')
+    s += t(28, 107, len(projects), 43, '#edf1f5', '700')
+    s += t(265, 107, len(languages), 43, '#edf1f5', '700')
+    s += t(28, 138, 'Repositorios propios', 15, '#8b949e')
+    s += t(265, 138, 'Lenguajes principales', 15, '#8b949e')
+    s += '<path d="M26 169H535" stroke="#30363d"/>'
+    s += t(26, 199, 'Versiones, código e historial en GitHub.', 15, '#8b949e')
+    s += t(26, 228, 'Actualizado: ' + updated, 12, '#768390')
+    s += t(603, 39, 'Lenguaje principal por repositorio', 21, '#c9d1d9', '600')
+    s += t(603, 67, f'{lang_total} repositorios públicos con lenguaje detectado', 13, '#8b949e')
+    x = 604
+    palette = ['#a3b1bf', '#788b9f', '#566b81', '#364b62', '#b9c4cf', '#64778c']
     for i, (name, count) in enumerate(languages.most_common()):
-        color = COLORS.get(name, '#95a7c8')
-        w = (1200 * count / lang_total) if lang_total else 0
-        s += f'<rect x="{x:.2f}" y="245" width="{w:.2f}" height="15" fill="{color}"/>'
-        x += w
-        col, row = i % 4, i // 4
-        lx, ly = 34 + col * 300, 290 + row * 22
-        s += f'<circle cx="{lx}" cy="{ly-5}" r="5" fill="{color}"/>'
-        s += t(lx+13, ly, f'{name} · {count} ({count/lang_total:.0%})', 14, '#c4d0e3')
-    s += '<path d="M28 331H1252" stroke="#26354c"/>'
-    s += '<circle cx="34" cy="353" r="4" fill="#42e8e0" class="light"/>'
-    s += t(47, 358, f'Actualizado: {updated} · Solo proyectos públicos · Perfil excluido del cálculo', 12, '#8fa3bf')
-    s += t(1073, 358, 'GITHUB / METRICS', 11, '#42e8e0', '700', 'letter-spacing="1"')
-    s += '</svg>'
-    return s
+        color = palette[i % len(palette)]
+        width = 565 * count / lang_total if lang_total else 0
+        s += f'<rect x="{x:.2f}" y="90" width="{width:.2f}" height="12" fill="{color}"/>'
+        x += width
+        lx, ly = 611 + (i % 2) * 282, 140 + (i // 2) * 27
+        s += f'<circle cx="{lx}" cy="{ly-5}" r="4" fill="{color}"/>'
+        s += t(lx+12, ly, f'{name} · {count}', 14, '#b6c2cf')
+    s += t(603, 228, 'Distribución por repositorios, no por nivel de dominio.', 12, '#768390')
+    return s + '</svg>'
 
 
 if __name__ == '__main__':
