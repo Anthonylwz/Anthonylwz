@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="230" viewBox="0 0 1200 230" role="img" aria-labelledby="title desc">
+<title id="title">Anthony Alex · Desarrollo web y datos</title>
+<desc id="desc">Portada oscura con una ventana de código y conexiones animadas de forma sutil.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif}.cursor{animation:blink 1.6s steps(2,end) infinite}.flow{stroke-dasharray:5 20;animation:flow 14s linear infinite}@keyframes blink{50%{opacity:0}}@keyframes flow{to{stroke-dashoffset:-200}}@media(prefers-reduced-motion:reduce){.cursor,.flow{animation:none}}</style>
+<rect x="1" y="1" width="1198" height="228" rx="16" fill="#0d1117" stroke="#30363d"/>
+<text x="42" y="67" font-size="13" letter-spacing="3" fill="#8b949e">ANTHONYLWZ</text>
+<text x="40" y="140" font-size="66" font-weight="700" fill="#f0f3f7">Anthony Alex<tspan class="cursor" fill="#9ba9b8">_</tspan></text>
+<text x="44" y="184" font-size="22" fill="#b0bfce">Desarrollo web · Datos</text>
+<g fill="none" stroke="#455361" stroke-width="1.6">
+<path d="M944 118H995Q1006 118 1006 130V162H1042M944 93H1006V59H1060"/>
+<path class="flow" d="M944 118H995Q1006 118 1006 130V162H1042M944 93H1006V59H1060" stroke="#a2afbc"/>
+<rect x="755" y="57" width="191" height="123" rx="12" fill="#161b22" stroke="#30363d"/>
+<path d="M755 85H946" stroke="#30363d"/>
+<path d="M811 113L797 127L811 141M888 113L902 127L888 141M863 107L839 148" stroke="#a9b6c4" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1060" y="34" width="78" height="51" rx="8" fill="#161b22" stroke="#30363d"/>
+<path d="M1074 50H1123M1074 59H1110M1074 68H1118" stroke="#647484"/>
+<ellipse cx="1084" cy="142" rx="39" ry="12" fill="#161b22" stroke="#607080"/>
+<path d="M1045 142V183C1045 199 1123 199 1123 183V142M1045 162C1045 178 1123 178 1123 162" stroke="#607080"/>
+</g><g fill="#647484"><circle cx="773" cy="71" r="3"/><circle cx="785" cy="71" r="3"/><circle cx="797" cy="71" r="3"/></g>
+</svg>

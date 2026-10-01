@@ -47,34 +47,42 @@ def t(x, y, value, size=18, color='#edf4ff', weight='400', extra=''):
     return f'<text x="{x}" y="{y}" font-size="{size}" fill="{color}" font-weight="{weight}" {extra}>{escape(str(value))}</text>'
 
 
-def render(repositories):
-    projects = [r for r in repositories if r['name'].lower() != OWNER.lower() and not r.get('fork', False)]
-    languages = Counter(r['language'] for r in projects if r.get('language'))
-    lang_total = sum(languages.values())
-    updated = datetime.now(timezone(timedelta(hours=-5))).strftime('%d/%m/%Y')
-    s = '''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="255" viewBox="0 0 1200 255" role="img" aria-labelledby="title desc"><title id="title">GitHub: repositorios públicos y lenguajes principales</title><desc id="desc">Datos de repositorios públicos propios, excluido el repositorio de presentación. El gráfico cuenta el lenguaje principal de cada repositorio.</desc><style>text{font-family:Arial,Helvetica,sans-serif}</style><rect x="1" y="1" width="560" height="253" rx="12" fill="#0d1117" stroke="#30363d"/><rect x="578" y="1" width="621" height="253" rx="12" fill="#0d1117" stroke="#30363d"/>'''
-    s += t(26, 39, 'GitHub / datos públicos', 21, '#c9d1d9', '600')
-    s += t(28, 107, len(projects), 43, '#edf1f5', '700')
-    s += t(265, 107, len(languages), 43, '#edf1f5', '700')
-    s += t(28, 138, 'Repositorios propios', 15, '#8b949e')
-    s += t(265, 138, 'Lenguajes principales', 15, '#8b949e')
-    s += '<path d="M26 169H535" stroke="#30363d"/>'
-    s += t(26, 199, 'Versiones, código e historial en GitHub.', 15, '#8b949e')
-    s += t(26, 228, 'Actualizado: ' + updated, 12, '#768390')
-    s += t(603, 39, 'Lenguaje principal por repositorio', 21, '#c9d1d9', '600')
-    s += t(603, 67, f'{lang_total} repositorios públicos con lenguaje detectado', 13, '#8b949e')
-    x = 604
-    palette = ['#a3b1bf', '#788b9f', '#566b81', '#364b62', '#b9c4cf', '#64778c']
+def render_counts(repo_count, languages, updated):
+    import math
+    total = sum(languages.values())
+    s = '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="216" viewBox="0 0 1200 216" role="img" aria-labelledby="title desc"><title id="title">Datos públicos de GitHub</title><desc id="desc">Repositorios propios y distribución del lenguaje principal por repositorio. No es una escala de dominio.</desc><style>text{font-family:Arial,Helvetica,sans-serif}</style><rect x="1" y="1" width="1198" height="214" rx="14" fill="#0d1117" stroke="#30363d"/>'
+    s += t(30, 35, 'GITHUB / DATOS PÚBLICOS', 13, '#8b949e', extra='letter-spacing="2"')
+    s += '<path d="M538 28V187" stroke="#30363d"/>'
+    s += t(38, 123, repo_count, 53, '#edf1f5', '700')
+    s += t(269, 123, len(languages), 53, '#edf1f5', '700')
+    s += t(40, 157, 'Repositorios propios', 16, '#8b949e')
+    s += t(270, 157, 'Lenguajes principales', 16, '#8b949e')
+    s += t(1128, 35, '↗', 27, '#a3b1bf')
+    s += t(782, 58, 'Lenguaje principal · repositorios', 17, '#c9d1d9', '600')
+    s += '<circle cx="663" cy="107" r="58" fill="none" stroke="#212830" stroke-width="16"/>'
+    circumference = 2 * math.pi * 58
+    offset = 0
+    palette = ['#b4bfca', '#8799ab', '#576d83', '#354b63', '#9cadbc', '#63768a']
     for i, (name, count) in enumerate(languages.most_common()):
         color = palette[i % len(palette)]
-        width = 565 * count / lang_total if lang_total else 0
-        s += f'<rect x="{x:.2f}" y="90" width="{width:.2f}" height="12" fill="{color}"/>'
-        x += width
-        lx, ly = 611 + (i % 2) * 282, 140 + (i // 2) * 27
-        s += f'<circle cx="{lx}" cy="{ly-5}" r="4" fill="{color}"/>'
-        s += t(lx+12, ly, f'{name} · {count}', 14, '#b6c2cf')
-    s += t(603, 228, 'Distribución por repositorios, no por nivel de dominio.', 12, '#768390')
+        length = circumference * count / total if total else 0
+        s += f'<circle cx="663" cy="107" r="58" fill="none" stroke="{color}" stroke-width="16" stroke-dasharray="{length:.3f} {circumference-length:.3f}" stroke-dashoffset="{-offset:.3f}" transform="rotate(-90 663 107)"/>'
+        offset += length
+        yy = 90 + i * 25
+        s += f'<circle cx="788" cy="{yy-5}" r="4" fill="{color}"/>'
+        label = 'Notebooks' if name == 'Jupyter Notebook' else name
+        s += t(805, yy, label, 16, '#aebbc8')
+        s += t(1119, yy, count, 16, '#e5eaf0', '600', extra='text-anchor="end"')
+    s += t(663, 115, total, 29, '#e5eaf0', '600', extra='text-anchor="middle"')
+    s += t(32, 196, updated, 11, '#687789')
     return s + '</svg>'
+
+
+def render(repositories):
+    projects = [r for r in repositories if r['name'].lower() != OWNER.lower() and not r.get('fork', False) and not r.get('private', True)]
+    languages = Counter(r['language'] for r in projects if r.get('language'))
+    updated = datetime.now(timezone(timedelta(hours=-5))).strftime('%d/%m/%Y')
+    return render_counts(len(projects), languages, updated)
 
 
 if __name__ == '__main__':
