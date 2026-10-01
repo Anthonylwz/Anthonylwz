@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Anthonylwz/cv-anthony"><img src="https://img.shields.io/badge/PORTAFOLIO-22D3EE?style=for-the-badge&logo=github&logoColor=0B1120" alt="Portafolio" /></a>
-  <a href="#proyectos-destacados"><img src="https://img.shields.io/badge/EXPLORAR_PROYECTOS-A78BFA?style=for-the-badge&logo=github&logoColor=0B1120" alt="Explorar proyectos" /></a>
+  <a href="https://github.com/Anthonylwz/cv-anthony">👨‍💻 Portafolio</a>
+  &nbsp; · &nbsp; <a href="#proyectos-destacados">🚀 Explorar proyectos</a>
 </p>
 
 ### Hola, soy Anthony 👋
