@@ -50,11 +50,11 @@ def t(x, y, value, size=18, color='#edf4ff', weight='400', extra=''):
 def render_counts(repo_count, languages, updated):
     import math
     total = sum(languages.values())
-    s = '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="216" viewBox="0 0 1200 216" role="img" aria-labelledby="title desc"><title id="title">Datos públicos de GitHub</title><desc id="desc">Repositorios propios y distribución del lenguaje principal por repositorio. No es una escala de dominio.</desc><style>text{font-family:Arial,Helvetica,sans-serif}</style><rect x="1" y="1" width="1198" height="214" rx="14" fill="#0d1117" stroke="#30363d"/>'
+    s = '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="216" viewBox="0 0 1200 216" role="img" aria-labelledby="title desc"><title id="title">Datos públicos de GitHub</title><desc id="desc">Repositorios propios y distribución del lenguaje principal por repositorio. No es una escala de dominio.</desc><style>text{font-family:Arial,Helvetica,sans-serif}.metric{animation:appear 1.2s ease-out both}.second{animation-delay:.18s}.slice{animation:appear 1.5s ease-out both}.halo{transform-origin:663px 107px;animation:orbit 12s linear infinite}@keyframes appear{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}@keyframes orbit{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.metric,.slice,.halo{animation:none}}</style><rect x="1" y="1" width="1198" height="214" rx="14" fill="#0d1117" stroke="#30363d"/>'
     s += t(30, 35, 'GITHUB / DATOS PÚBLICOS', 13, '#8b949e', extra='letter-spacing="2"')
     s += '<path d="M538 28V187" stroke="#30363d"/>'
-    s += t(38, 123, repo_count, 53, '#edf1f5', '700')
-    s += t(269, 123, len(languages), 53, '#edf1f5', '700')
+    s += t(38, 123, repo_count, 53, '#edf1f5', '700', extra='class="metric"')
+    s += t(269, 123, len(languages), 53, '#edf1f5', '700', extra='class="metric second"')
     s += t(40, 157, 'Repositorios propios', 16, '#8b949e')
     s += t(270, 157, 'Lenguajes principales', 16, '#8b949e')
     s += t(1128, 35, '↗', 27, '#a3b1bf')
@@ -66,13 +66,14 @@ def render_counts(repo_count, languages, updated):
     for i, (name, count) in enumerate(languages.most_common()):
         color = palette[i % len(palette)]
         length = circumference * count / total if total else 0
-        s += f'<circle cx="663" cy="107" r="58" fill="none" stroke="{color}" stroke-width="16" stroke-dasharray="{length:.3f} {circumference-length:.3f}" stroke-dashoffset="{-offset:.3f}" transform="rotate(-90 663 107)"/>'
+        s += f'<circle class="slice" style="animation-delay:{i*.12:.2f}s" cx="663" cy="107" r="58" fill="none" stroke="{color}" stroke-width="16" stroke-dasharray="{length:.3f} {circumference-length:.3f}" stroke-dashoffset="{-offset:.3f}" transform="rotate(-90 663 107)"/>'
         offset += length
         yy = 90 + i * 25
         s += f'<circle cx="788" cy="{yy-5}" r="4" fill="{color}"/>'
         label = 'Notebooks' if name == 'Jupyter Notebook' else name
         s += t(805, yy, label, 16, '#aebbc8')
         s += t(1119, yy, count, 16, '#e5eaf0', '600', extra='text-anchor="end"')
+    s += '<circle class="halo" cx="663" cy="107" r="75" fill="none" stroke="#75899d" stroke-width="1.3" stroke-dasharray="16 39" opacity=".65"/>'
     s += t(663, 115, total, 29, '#e5eaf0', '600', extra='text-anchor="middle"')
     s += t(32, 196, updated, 11, '#687789')
     return s + '</svg>'
