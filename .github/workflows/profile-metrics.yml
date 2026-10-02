@@ -8,6 +8,8 @@ on:
     branches: [main]
     paths:
       - scripts/refresh_metrics.py
+      - scripts/profile_typography.py
+      - assets/typography/oxanium/glyphs.json
       - .github/workflows/profile-metrics.yml
 
 permissions:
@@ -32,7 +34,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/metrics-v2.svg
+          git add assets/metrics-display.svg
           if ! git diff --cached --quiet; then
             git commit -m 'Actualizar métricas públicas del perfil'
             git push

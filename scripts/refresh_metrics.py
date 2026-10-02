@@ -14,6 +14,8 @@ from urllib.error import HTTPError, URLError
 
 ROOT = Path(__file__).resolve().parents[1]
 OWNER = 'Anthonylwz'
+sys.path.insert(0, str(ROOT / 'scripts'))
+from profile_typography import svg_text
 
 # Quiet matte motion; no moving highlights or glowing beacons.
 MOTION_DECOR = """
@@ -49,13 +51,13 @@ def fetch_public_repositories():
 
 
 def t(x, y, value, size=18, color='#edf4ff', weight='400', extra=''):
-    return f'<text x="{x}" y="{y}" font-size="{size}" fill="{color}" font-weight="{weight}" {extra}>{escape(str(value))}</text>'
+    return svg_text(value, x, y, size, color, weight, extra)
 
 
 def render_counts(repo_count, languages, updated):
     import math
     total = sum(languages.values())
-    s = '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="216" viewBox="0 0 1200 216" role="img" aria-labelledby="title desc"><title id="title">Datos públicos de GitHub</title><desc id="desc">Repositorios propios y distribución del lenguaje principal por repositorio. No es una escala de dominio.</desc><style>text{font-family:Arial,Helvetica,sans-serif}.metric{animation:appear 1.2s ease-out both}.second{animation-delay:.18s}.slice{animation:appear 1.5s ease-out both}.halo{transform-origin:663px 107px;animation:orbit 12s linear infinite}@keyframes appear{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}@keyframes orbit{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.metric,.slice,.halo{animation:none}}</style><rect x="1" y="1" width="1198" height="214" rx="14" fill="#0d1117" stroke="#30363d"/>'
+    s = '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="216" viewBox="0 0 1200 216" role="img" aria-labelledby="title desc"><title id="title">Datos públicos de GitHub</title><desc id="desc">Repositorios propios y distribución del lenguaje principal por repositorio. No es una escala de dominio.</desc><style>.metric{animation:appear 1.2s ease-out both}.second{animation-delay:.18s}.slice{animation:appear 1.5s ease-out both}.halo{transform-origin:663px 107px;animation:orbit 12s linear infinite}@keyframes appear{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}@keyframes orbit{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.metric,.slice,.halo{animation:none}}</style><rect x="1" y="1" width="1198" height="214" rx="14" fill="#0d1117" stroke="#30363d"/>'
     s += t(30, 35, 'GITHUB / DATOS PÚBLICOS', 13, '#8b949e', extra='letter-spacing="2"')
     s += '<path d="M538 28V187" stroke="#30363d"/>'
     s += t(38, 123, repo_count, 53, '#edf1f5', '700', extra='class="metric"')
@@ -95,5 +97,5 @@ if __name__ == '__main__':
     data = json.loads(Path(sys.argv[1]).read_text(encoding='utf-8')) if len(sys.argv) > 1 else fetch_public_repositories()
     result = render(data)
     (ROOT/'assets').mkdir(parents=True, exist_ok=True)
-    (ROOT/'assets'/'metrics-v2.svg').write_text(result, encoding='utf-8')
-    print('Updated assets/metrics-v2.svg from public repository data.')
+    (ROOT/'assets'/'metrics-display.svg').write_text(result, encoding='utf-8')
+    print('Updated assets/metrics-display.svg from public repository data.')
