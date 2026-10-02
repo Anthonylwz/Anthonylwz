@@ -15,22 +15,10 @@ from urllib.error import HTTPError, URLError
 ROOT = Path(__file__).resolve().parents[1]
 OWNER = 'Anthonylwz'
 
-# Kept in the renderer so the daily refresh preserves the profile's motion.
-MOTION_STYLE = """
-.metric-sweep{stroke-dasharray:42 168;animation:metric-sweep 7s ease-in-out infinite}
-.metric-sweep.second{animation-delay:-3.5s}
-.ring-beacon{transform-origin:663px 107px;animation:orbit 9s linear infinite}
-@keyframes metric-sweep{0%,100%{stroke-dashoffset:210;opacity:.2}50%{stroke-dashoffset:0;opacity:.75}}
-@media(prefers-reduced-motion:reduce){.metric-sweep,.ring-beacon{animation:none}.metric-sweep{stroke-dasharray:none;opacity:.25}}
-"""
+# Quiet matte motion; no moving highlights or glowing beacons.
 MOTION_DECOR = """
 <defs><linearGradient id="metric-accent"><stop stop-color="#7cbfd7"/><stop offset=".55" stop-color="#91a9d8"/><stop offset="1" stop-color="#b1a0d0"/></linearGradient></defs>
-<g fill="none" stroke="url(#metric-accent)" stroke-linecap="round" stroke-width="1.5">
-<path class="metric-sweep" d="M40 177H225"/><path class="metric-sweep second" d="M270 177H455"/>
-</g>
-<g class="ring-beacon"><circle cx="663" cy="32" r="5" fill="#91bdd7" opacity=".15"/><circle cx="663" cy="32" r="2.2" fill="#a5d7e9"/></g>
 """
-
 
 
 def fetch_public_repositories():
@@ -93,7 +81,7 @@ def render_counts(repo_count, languages, updated):
     s += '<circle class="halo" cx="663" cy="107" r="75" fill="none" stroke="url(#metric-accent)" stroke-width="1.3" stroke-dasharray="16 39" opacity=".65"/>'
     s += t(663, 115, total, 29, '#e5eaf0', '600', extra='text-anchor="middle"')
     s += t(32, 196, updated, 11, '#687789')
-    return s.replace('</style>', MOTION_STYLE + '</style>', 1) + MOTION_DECOR + '</svg>'
+    return s + MOTION_DECOR + '</svg>'
 
 
 def render(repositories):

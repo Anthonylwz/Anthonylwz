@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/header-motion.svg?v=kinetic3" width="100%" alt="Anthony Alex · Desarrollo web y datos" />
+  <img src="./assets/header-motion.svg?v=galaxy4" width="100%" alt="Anthony Alex · Desarrollo web y datos" />
 </p>
 
 <table width="100%">
@@ -7,38 +7,38 @@
     <td colspan="3" align="center">
       <img src="./assets/rule.svg" width="800" height="1" alt="" /><br/>
       <strong>Frontend</strong><br/><br/>
-      <img src="./assets/icons/motion/html5.svg?v=kinetic3" width="54" height="54" alt="HTML5" title="HTML5" />
-      <img src="./assets/icons/motion/css3.svg?v=kinetic3" width="54" height="54" alt="CSS3" title="CSS3" />
-      <img src="./assets/icons/motion/javascript.svg?v=kinetic3" width="54" height="54" alt="JavaScript" title="JavaScript" />
-      <img src="./assets/icons/motion/react.svg?v=kinetic3" width="54" height="54" alt="React" title="React" />
-      <img src="./assets/icons/motion/vitejs.svg?v=kinetic3" width="54" height="54" alt="Vite" title="Vite" />
-      <img src="./assets/icons/motion/tailwindcss.svg?v=kinetic3" width="54" height="54" alt="Tailwind CSS" title="Tailwind CSS" />
-      <img src="./assets/icons/motion/framermotion.svg?v=kinetic3" width="54" height="54" alt="Motion / Framer Motion" title="Motion / Framer Motion" />
+      <img src="./assets/icons/motion/html5.svg?v=galaxy4" width="54" height="54" alt="HTML5" title="HTML5" />
+      <img src="./assets/icons/motion/css3.svg?v=galaxy4" width="54" height="54" alt="CSS3" title="CSS3" />
+      <img src="./assets/icons/motion/javascript.svg?v=galaxy4" width="54" height="54" alt="JavaScript" title="JavaScript" />
+      <img src="./assets/icons/motion/react.svg?v=galaxy4" width="54" height="54" alt="React" title="React" />
+      <img src="./assets/icons/motion/vitejs.svg?v=galaxy4" width="54" height="54" alt="Vite" title="Vite" />
+      <img src="./assets/icons/motion/tailwindcss.svg?v=galaxy4" width="54" height="54" alt="Tailwind CSS" title="Tailwind CSS" />
+      <img src="./assets/icons/motion/framermotion.svg?v=galaxy4" width="54" height="54" alt="Motion / Framer Motion" title="Motion / Framer Motion" />
     </td>
   </tr>
   <tr>
     <td width="33%" align="center" valign="top">
       <strong>Backend</strong><br/><br/>
-      <img src="./assets/icons/motion/php.svg?v=kinetic3" width="54" height="54" alt="PHP" title="PHP" />
-      <img src="./assets/icons/motion/mysql.svg?v=kinetic3" width="54" height="54" alt="MySQL" title="MySQL" />
-      <img src="./assets/icons/motion/firebase.svg?v=kinetic3" width="54" height="54" alt="Firebase Cloud Messaging" title="Firebase Cloud Messaging" />
+      <img src="./assets/icons/motion/php.svg?v=galaxy4" width="54" height="54" alt="PHP" title="PHP" />
+      <img src="./assets/icons/motion/mysql.svg?v=galaxy4" width="54" height="54" alt="MySQL" title="MySQL" />
+      <img src="./assets/icons/motion/firebase.svg?v=galaxy4" width="54" height="54" alt="Firebase Cloud Messaging" title="Firebase Cloud Messaging" />
     </td>
     <td width="33%" align="center" valign="top">
       <strong>Python y notebooks</strong><br/><br/>
-      <img src="./assets/icons/motion/python.svg?v=kinetic3" width="54" height="54" alt="Python" title="Python" />
-      <img src="./assets/icons/motion/pandas.svg?v=kinetic3" width="54" height="54" alt="pandas" title="pandas" />
-      <img src="./assets/icons/motion/jupyter.svg?v=kinetic3" width="54" height="54" alt="Notebooks Jupyter (.ipynb)" title="Notebooks Jupyter (.ipynb)" />
+      <img src="./assets/icons/motion/python.svg?v=galaxy4" width="54" height="54" alt="Python" title="Python" />
+      <img src="./assets/icons/motion/pandas.svg?v=galaxy4" width="54" height="54" alt="pandas" title="pandas" />
+      <img src="./assets/icons/motion/jupyter.svg?v=galaxy4" width="54" height="54" alt="Notebooks Jupyter (.ipynb)" title="Notebooks Jupyter (.ipynb)" />
     </td>
     <td width="33%" align="center" valign="top">
       <strong>Versiones</strong><br/><br/>
-      <img src="./assets/icons/motion/git.svg?v=kinetic3" width="54" height="54" alt="Git" title="Git" />
-      <img src="./assets/icons/motion/github.svg?v=kinetic3" width="54" height="54" alt="GitHub" title="GitHub" />
+      <img src="./assets/icons/motion/git.svg?v=galaxy4" width="54" height="54" alt="Git" title="Git" />
+      <img src="./assets/icons/motion/github.svg?v=galaxy4" width="54" height="54" alt="GitHub" title="GitHub" />
     </td>
   </tr>
 </table>
 
 <p align="center">
   <a href="https://github.com/Anthonylwz?tab=repositories">
-    <img src="./assets/metrics-v2.svg?v=kinetic3" width="100%" alt="Datos públicos de GitHub: repositorios propios y distribución del lenguaje principal por repositorio. Pulsa para ver el código público." />
+    <img src="./assets/metrics-v2.svg?v=galaxy4" width="100%" alt="Datos públicos de GitHub: repositorios propios y distribución del lenguaje principal por repositorio. Pulsa para ver el código público." />
   </a>
 </p>

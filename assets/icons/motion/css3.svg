@@ -1,33 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" role="img" aria-labelledby="title">
 <title id="title">CSS3</title>
-<defs>
-<linearGradient id="glass" x2="0" y2="1"><stop stop-color="#ffffff" stop-opacity=".06"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
-<linearGradient id="shine"><stop stop-color="#ffffff" stop-opacity="0"/><stop offset=".5" stop-color="#ffffff" stop-opacity=".09"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
-<clipPath id="clip"><rect x="5" y="5" width="70" height="70" rx="17"/></clipPath>
-</defs>
 <style>
 .tile{animation:float 6.199999999999999s ease-in-out -0.47s infinite}
 .logo{transform-origin:40px 40px;animation:tilt 6.199999999999999s ease-in-out -0.47s infinite}
-.edge{stroke-dasharray:34 228;animation:edge 9s linear -0.47s infinite}
-.sheen{animation:shine 8.5s ease-in-out -0.47s infinite}
-.status{animation:pulse 3.5s ease-in-out -0.47s infinite}
 @keyframes float{0%,100%{transform:translateY(2px)}50%{transform:translateY(-2px)}}
 @keyframes tilt{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
 @keyframes breathe{0%,100%{transform:scale(.93)}50%{transform:scale(1.04)}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes lift{0%,100%{transform:translateY(3px) scale(.96)}50%{transform:translateY(-4px) scale(1.04)}}
 @keyframes drift{0%,100%{transform:translateX(-3px) rotate(-3deg)}50%{transform:translateX(3px) rotate(3deg)}}
-@keyframes edge{to{stroke-dashoffset:-262}}
-@keyframes shine{0%,15%{transform:translateX(-90px)}65%,100%{transform:translateX(100px)}}
-@keyframes pulse{0%,100%{opacity:.35}50%{opacity:.9}}
-@media(prefers-reduced-motion:reduce){.tile,.logo,.edge,.sheen,.status{animation:none}.sheen{display:none}.edge{stroke-dasharray:none;opacity:.35}}
+@media(prefers-reduced-motion:reduce){.tile,.logo{animation:none}}
 </style>
 <g class="tile">
-<rect x="5" y="5" width="70" height="70" rx="17" fill="#202731"/>
-<rect x="5" y="5" width="70" height="70" rx="17" fill="url(#glass)" stroke="#70b8e7" stroke-opacity=".18"/>
-<rect class="edge" x="5" y="5" width="70" height="70" rx="17" fill="none" stroke="#70b8e7" stroke-width="1.3" stroke-linecap="round" opacity=".8"/>
+<rect x="5" y="5" width="70" height="70" rx="17" fill="#202731" stroke="#748091" stroke-opacity=".18"/>
 <g class="logo"><svg x="16" y="16" width="48" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path fill="#1572B6" d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z"/><path fill="#33A9DC" d="M64.001 117.062l36.559-10.136 8.601-96.354h-45.16v106.49z"/><path fill="#fff" d="M64.001 51.429h18.302l1.264-14.163H64.001V23.435h34.682l-.332 3.711-3.4 38.114h-30.95V51.429z"/><path fill="#EBEBEB" d="M64.083 87.349l-.061.018-15.403-4.159-.985-11.031H33.752l1.937 21.717 28.331 7.863.063-.018v-14.39z"/><path fill="#fff" d="M81.127 64.675l-1.666 18.522-15.426 4.164v14.39l28.354-7.858.208-2.337 2.406-26.881H81.127z"/><path fill="#EBEBEB" d="M64.048 23.435v13.831H30.64l-.277-3.108-.63-7.012-.331-3.711h34.646zm-.047 27.996v13.831H48.792l-.277-3.108-.631-7.012-.33-3.711h16.447z"/></svg></g>
-<g clip-path="url(#clip)"><path class="sheen" d="M-28 3H-2L32 77H6Z" fill="url(#shine)"/></g>
-<circle class="status" cx="64" cy="64" r="1.8" fill="#70b8e7"/>
 </g>
 </svg>

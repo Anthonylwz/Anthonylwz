@@ -1,33 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" role="img" aria-labelledby="title">
 <title id="title">Firebase Cloud Messaging</title>
-<defs>
-<linearGradient id="glass" x2="0" y2="1"><stop stop-color="#ffffff" stop-opacity=".06"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
-<linearGradient id="shine"><stop stop-color="#ffffff" stop-opacity="0"/><stop offset=".5" stop-color="#ffffff" stop-opacity=".09"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
-<clipPath id="clip"><rect x="5" y="5" width="70" height="70" rx="17"/></clipPath>
-</defs>
 <style>
 .tile{animation:float 6.199999999999999s ease-in-out -4.2299999999999995s infinite}
 .logo{transform-origin:40px 40px;animation:lift 6.199999999999999s ease-in-out -4.2299999999999995s infinite}
-.edge{stroke-dasharray:34 228;animation:edge 8s linear -4.2299999999999995s infinite}
-.sheen{animation:shine 7.5s ease-in-out -4.2299999999999995s infinite}
-.status{animation:pulse 3.5s ease-in-out -4.2299999999999995s infinite}
 @keyframes float{0%,100%{transform:translateY(2px)}50%{transform:translateY(-2px)}}
 @keyframes tilt{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
 @keyframes breathe{0%,100%{transform:scale(.93)}50%{transform:scale(1.04)}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes lift{0%,100%{transform:translateY(3px) scale(.96)}50%{transform:translateY(-4px) scale(1.04)}}
 @keyframes drift{0%,100%{transform:translateX(-3px) rotate(-3deg)}50%{transform:translateX(3px) rotate(3deg)}}
-@keyframes edge{to{stroke-dashoffset:-262}}
-@keyframes shine{0%,15%{transform:translateX(-90px)}65%,100%{transform:translateX(100px)}}
-@keyframes pulse{0%,100%{opacity:.35}50%{opacity:.9}}
-@media(prefers-reduced-motion:reduce){.tile,.logo,.edge,.sheen,.status{animation:none}.sheen{display:none}.edge{stroke-dasharray:none;opacity:.35}}
+@media(prefers-reduced-motion:reduce){.tile,.logo{animation:none}}
 </style>
 <g class="tile">
-<rect x="5" y="5" width="70" height="70" rx="17" fill="#202731"/>
-<rect x="5" y="5" width="70" height="70" rx="17" fill="url(#glass)" stroke="#efbe68" stroke-opacity=".18"/>
-<rect class="edge" x="5" y="5" width="70" height="70" rx="17" fill="none" stroke="#efbe68" stroke-width="1.3" stroke-linecap="round" opacity=".8"/>
+<rect x="5" y="5" width="70" height="70" rx="17" fill="#202731" stroke="#748091" stroke-opacity=".18"/>
 <g class="logo"><svg x="16" y="16" width="48" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path fill="#ffa000" d="M17.474 103.276 33.229 2.462a2.91 2.91 0 0 1 5.44-.924l16.294 30.39 6.494-12.366a2.91 2.91 0 0 1 5.15 0l43.97 83.714H17.474Z"/><path fill="#f57c00" d="M71.903 64.005 54.955 31.913l-37.481 71.363Z"/><path fill="#ffca28" d="M110.577 103.276 98.51 28.604a2.913 2.913 0 0 0-1.984-2.286 2.906 2.906 0 0 0-2.94.714l-76.112 76.243 42.115 23.618a8.728 8.728 0 0 0 8.51 0l42.478-23.618Z"/><path fill="#fff" fill-opacity=".2" d="M98.51 28.604a2.913 2.913 0 0 0-1.984-2.286 2.906 2.906 0 0 0-2.94.713L78.479 42.178 66.6 19.562a2.91 2.91 0 0 0-5.15 0l-6.494 12.365L38.662 1.538A2.91 2.91 0 0 0 35.605.044a2.907 2.907 0 0 0-2.384 2.425L17.474 103.276h-.051l.05.058.415.204 75.676-75.764a2.91 2.91 0 0 1 4.932 1.571l11.965 74.003.116-.073L98.51 28.603Zm-80.898 74.534L33.228 3.182A2.91 2.91 0 0 1 35.613.756a2.911 2.911 0 0 1 3.057 1.495l16.292 30.39 6.495-12.366a2.91 2.91 0 0 1 5.15 0L78.245 42.41 17.61 103.138Z"/><path fill="#a52714" d="M68.099 126.18a8.728 8.728 0 0 1-8.51 0l-42.015-23.55-.102.647 42.115 23.61a8.728 8.728 0 0 0 8.51 0l42.48-23.61-.11-.67-42.37 23.575z" opacity=".2"/></svg></g>
-<g clip-path="url(#clip)"><path class="sheen" d="M-28 3H-2L32 77H6Z" fill="url(#shine)"/></g>
-<circle class="status" cx="64" cy="64" r="1.8" fill="#efbe68"/>
 </g>
 </svg>
