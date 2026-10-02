@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="230" viewBox="0 0 1200 230" role="img" aria-labelledby="title desc">
+"""Build the profile's self-contained SVG motion assets (standard library only)."""
+from pathlib import Path
+import re
+
+ROOT = Path(__file__).resolve().parents[1]
+
+HEADER = '''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="230" viewBox="0 0 1200 230" role="img" aria-labelledby="title desc">
 <title id="title">Anthony Alex · Desarrollo web y datos</title>
 <desc id="desc">Órbitas de luz, un símbolo de código flotante y ondas suaves en movimiento.</desc>
 <defs>
@@ -75,4 +81,71 @@ text{font-family:Arial,Helvetica,sans-serif}
 <text x="40" y="133" font-size="66" font-weight="700" letter-spacing="-2" fill="#eff3f8">Anthony Alex<tspan class="cursor" fill="#86c9df">_</tspan></text>
 <text x="44" y="180" font-size="22" fill="#a9b8c9">Desarrollo web · Datos</text>
 <path class="underline" d="M44 200H570" fill="none" stroke="url(#accent)" stroke-width="1.4" stroke-linecap="round"/>
-</svg>
+</svg>'''
+
+ICONS = [
+    ('html5', 'HTML5', '#ef896c', 'float'),
+    ('css3', 'CSS3', '#70b8e7', 'tilt'),
+    ('javascript', 'JavaScript', '#e6d779', 'breathe'),
+    ('react', 'React', '#79d5ec', 'spin'),
+    ('vitejs', 'Vite', '#b69be4', 'lift'),
+    ('tailwindcss', 'Tailwind CSS', '#6dc9dd', 'drift'),
+    ('framermotion', 'Motion / Framer Motion', '#929ce6', 'lift'),
+    ('php', 'PHP', '#a7a9d6', 'breathe'),
+    ('mysql', 'MySQL', '#72bad7', 'drift'),
+    ('firebase', 'Firebase Cloud Messaging', '#efbe68', 'lift'),
+    ('python', 'Python', '#8cbcd9', 'tilt'),
+    ('pandas', 'pandas', '#a498d4', 'float'),
+    ('jupyter', 'Notebooks Jupyter (.ipynb)', '#eaaa79', 'spin'),
+    ('git', 'Git', '#e99983', 'tilt'),
+    ('github', 'GitHub', '#afc0d1', 'float'),
+]
+
+
+def icon_svg(name, label, accent, motion, index):
+    original = (ROOT / 'assets/icons' / f'{name}-original.svg').read_text(encoding='utf-8').strip()
+    original = re.sub(r'<svg\b', '<svg x="16" y="16" width="48" height="48"', original, count=1)
+    display = (ROOT / 'assets/icons' / f'{name}.svg').read_text(encoding='utf-8')
+    bg = re.search(r'<rect[^>]*fill="([^"]+)"', display).group(1)
+    delay = -index * .47
+    duration = 5.6 + (index % 4) * .6
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" role="img" aria-labelledby="title">
+<title id="title">{label}</title>
+<defs>
+<linearGradient id="glass" x2="0" y2="1"><stop stop-color="#ffffff" stop-opacity=".06"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+<linearGradient id="shine"><stop stop-color="#ffffff" stop-opacity="0"/><stop offset=".5" stop-color="#ffffff" stop-opacity=".09"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+<clipPath id="clip"><rect x="5" y="5" width="70" height="70" rx="17"/></clipPath>
+</defs>
+<style>
+.tile{{animation:float {duration}s ease-in-out {delay}s infinite}}
+.logo{{transform-origin:40px 40px;animation:{motion} {18 if motion == 'spin' else duration}s {'linear' if motion == 'spin' else 'ease-in-out'} {delay}s infinite}}
+.edge{{stroke-dasharray:34 228;animation:edge {8 + index % 3}s linear {delay}s infinite}}
+.sheen{{animation:shine {7.5 + index % 3}s ease-in-out {delay}s infinite}}
+.status{{animation:pulse 3.5s ease-in-out {delay}s infinite}}
+@keyframes float{{0%,100%{{transform:translateY(2px)}}50%{{transform:translateY(-2px)}}}}
+@keyframes tilt{{0%,100%{{transform:rotate(-7deg)}}50%{{transform:rotate(7deg)}}}}
+@keyframes breathe{{0%,100%{{transform:scale(.93)}}50%{{transform:scale(1.04)}}}}
+@keyframes spin{{to{{transform:rotate(360deg)}}}}
+@keyframes lift{{0%,100%{{transform:translateY(3px) scale(.96)}}50%{{transform:translateY(-4px) scale(1.04)}}}}
+@keyframes drift{{0%,100%{{transform:translateX(-3px) rotate(-3deg)}}50%{{transform:translateX(3px) rotate(3deg)}}}}
+@keyframes edge{{to{{stroke-dashoffset:-262}}}}
+@keyframes shine{{0%,15%{{transform:translateX(-90px)}}65%,100%{{transform:translateX(100px)}}}}
+@keyframes pulse{{0%,100%{{opacity:.35}}50%{{opacity:.9}}}}
+@media(prefers-reduced-motion:reduce){{.tile,.logo,.edge,.sheen,.status{{animation:none}}.sheen{{display:none}}.edge{{stroke-dasharray:none;opacity:.35}}}}
+</style>
+<g class="tile">
+<rect x="5" y="5" width="70" height="70" rx="17" fill="{bg}"/>
+<rect x="5" y="5" width="70" height="70" rx="17" fill="url(#glass)" stroke="{accent}" stroke-opacity=".18"/>
+<rect class="edge" x="5" y="5" width="70" height="70" rx="17" fill="none" stroke="{accent}" stroke-width="1.3" stroke-linecap="round" opacity=".8"/>
+<g class="logo">{original}</g>
+<g clip-path="url(#clip)"><path class="sheen" d="M-28 3H-2L32 77H6Z" fill="url(#shine)"/></g>
+<circle class="status" cx="64" cy="64" r="1.8" fill="{accent}"/>
+</g>
+</svg>'''
+
+
+if __name__ == '__main__':
+    (ROOT / 'assets/header-motion.svg').write_text(HEADER, encoding='utf-8')
+    for index, spec in enumerate(ICONS):
+        (ROOT / 'assets/icons/motion' / f'{spec[0]}.svg').write_text(icon_svg(*spec, index), encoding='utf-8')
+    print('Built header and 15 animated technology icons.')
