@@ -1,14 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" role="img" aria-labelledby="title">
 <title id="title">pandas</title>
 <style>
-.tile{animation:float 7.3999999999999995s ease-in-out -5.17s infinite}
-.logo{transform-origin:40px 40px;animation:float 7.3999999999999995s ease-in-out -5.17s infinite}
-@keyframes float{0%,100%{transform:translateY(2px)}50%{transform:translateY(-2px)}}
-@keyframes tilt{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
-@keyframes breathe{0%,100%{transform:scale(.93)}50%{transform:scale(1.04)}}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes lift{0%,100%{transform:translateY(3px) scale(.96)}50%{transform:translateY(-4px) scale(1.04)}}
-@keyframes drift{0%,100%{transform:translateX(-3px) rotate(-3deg)}50%{transform:translateX(3px) rotate(3deg)}}
+.tile{animation:wave 6.8s cubic-bezier(.22,.7,.3,1) 2.64s infinite}
+.logo{transform-origin:40px 40px;animation:spring 6.8s cubic-bezier(.22,.7,.3,1) 2.64s infinite}
+@keyframes wave{0%,44%,100%{transform:translateY(0)}5%{transform:translateY(2px)}15%,23%{transform:translateY(-5px)}31%{transform:translateY(1px)}38%{transform:translateY(0)}}
+@keyframes spring{0%,44%,100%{transform:scale(1)}5%{transform:scale(1.02,.98)}15%,23%{transform:scale(1.04)}31%{transform:scale(1.015,.985)}38%{transform:scale(1)}}
 @media(prefers-reduced-motion:reduce){.tile,.logo{animation:none}}
 </style>
 <g class="tile">
